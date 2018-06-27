@@ -480,7 +480,7 @@ module onet_core_output
         .tuple_in_flowstream_valid          (tuple_in_flowstream_valid)
     );
     generate genvar i;
-    for(i=0;i<7;i=i+1) begin : eth_channel
+    for(i=0;i<8;i=i+1) begin : eth_channel
         axis_converter_tx
         #(
             .C_M_AXIS_DATA_WIDTH  (C_M_AXIS_DATA_WIDTH),
@@ -523,7 +523,7 @@ module onet_core_output
     endgenerate
 
     generate genvar k;
-    for(k = 0;k<7;k=k+1) begin : dma_channel
+    for(k = 0;k<8;k=k+1) begin : dma_channel
         axis_converter_tx
         #(
             .C_M_AXIS_DATA_WIDTH  (C_M_AXIS_DATA_WIDTH),

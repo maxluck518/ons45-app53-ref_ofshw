@@ -17,12 +17,6 @@ module packet_pipeline
     input wire s_axis_rxd_aresetn,
     input wire s_axis_txd_aclk,
     input wire s_axis_txd_aresetn,
-    (* X_INTERFACE_PARAMETER = "POLARITY ACTIVE_HIGH" *) input clk_line_rst,
-    input clk_line,
-    (* X_INTERFACE_PARAMETER = "POLARITY ACTIVE_HIGH" *) input clk_lookup_rst,
-    input clk_lookup,
-    (* X_INTERFACE_PARAMETER = "POLARITY ACTIVE_HIGH" *) input clk_control_rst,
-    input clk_control,
 
     // eth rgmii
     output wire                                                     s_axis_rxd_0_tready,
@@ -445,6 +439,14 @@ module packet_pipeline
    wire                                                 sdnet_metadata_in_valid;
    wire [ACTION_TUPLE_WIDTH-1:0]                        sdnet_metadata_out_data;
    wire                                                 sdnet_metadata_out_valid;
+
+   wire clk_line        = s_axis_rxd_aclk;
+   wire clk_lookup      = s_axi_lite_aclk;
+   wire clk_control     = s_axi_lite_aclk;
+   wire clk_line_rst    = ~s_axis_rxd_aresetn;
+   wire clk_lookup_rst  = ~s_axi_lite_aresetn;
+   wire clk_control_rst = ~s_axi_lite_aresetn;
+
 
    packet_input_pipeline
    #(

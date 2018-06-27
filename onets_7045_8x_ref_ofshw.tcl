@@ -123,10 +123,10 @@ set_property "top" $proj_top $obj
 # set_property "part" $proj_part $obj
 
 # set_property used_in_synthesis false [get_files  $proj_root/$proj_name.srcs/constrs_1/imports/onetswitch_top.xdc]
-set_param route.enableGlobalHoldIter true
-update_compile_order -fileset sources_1
-update_compile_order -fileset sim_1
-launch_runs impl_1 -to_step write_bitstream
-wait_on_run impl_1
+# set_param route.enableGlobalHoldIter true
+# update_compile_order -fileset sources_1
+# update_compile_order -fileset sim_1
+# launch_runs impl_1 -to_step write_bitstream
+# wait_on_run impl_1
 
 puts "INFO: Project created."
