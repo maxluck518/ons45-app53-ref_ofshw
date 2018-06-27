@@ -89,13 +89,8 @@ module packet_input_quad
 	output     														m_axis_txc_0_tlast,
 	input      														m_axis_txc_0_tready,
 
-<<<<<<< HEAD:onets_7045_8x_ref_ofshw/ip/packet_pipeline/src/input_pipeline/packet_input_quad.v
     output [ACTION_TUPLE_WIDTH-1:0]           tuple_out_flowstream_data,
     output                                    tuple_out_flowstream_valid
-=======
-    output [ACTION_TUPLE_WIDTH-1:0]             tuple_out_flowstream_data,
-    output                                      tuple_out_flowstream_valid
->>>>>>> 12dbc2363991f75f748f42fa796a850676fff2c3:onets_7045_8x_ref_ofshw/ip/input_pipeline/packet_input_quad.v
 	
    );
    
@@ -114,11 +109,7 @@ module packet_input_quad
    (
       .clk                          (axis_aclk), 
       .reset                        (~axis_aresetn), 
-<<<<<<< HEAD:onets_7045_8x_ref_ofshw/ip/packet_pipeline/src/input_pipeline/packet_input_quad.v
 
-=======
-   
->>>>>>> 12dbc2363991f75f748f42fa796a850676fff2c3:onets_7045_8x_ref_ofshw/ip/input_pipeline/packet_input_quad.v
       .m_axis_eth_tx_tdata_0        (m_axis_txd_0_tdata), 
       .m_axis_eth_tx_tuser_0        (m_axis_txd_0_tuser), 
       .m_axis_eth_tx_tvalid_0       (m_axis_txd_0_tvalid), 

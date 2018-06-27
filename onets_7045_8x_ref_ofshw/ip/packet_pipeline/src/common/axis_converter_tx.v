@@ -48,11 +48,7 @@ module axis_converter_tx
 
     parameter C_M_AXIS_TUSER_WIDTH=128,
     parameter C_S_AXIS_TUSER_WIDTH=128,
-<<<<<<< HEAD:onets_7045_8x_ref_ofshw/ip/packet_pipeline/src/common/axis_converter_tx.v
     parameter ACTION_TUPLE_WIDTH=128,
-=======
-    parameter ACTION_TUPLE_WIDTH = 128,
->>>>>>> 12dbc2363991f75f748f42fa796a850676fff2c3:onets_7045_8x_ref_ofshw/ip/common/axis_converter_tx.v
 
     parameter C_LEN_WIDTH=16,
     parameter C_SPT_WIDTH=8,

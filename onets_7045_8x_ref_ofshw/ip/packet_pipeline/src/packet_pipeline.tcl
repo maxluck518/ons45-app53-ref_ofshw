@@ -38,9 +38,6 @@ add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/S_RESETTER.HDL
 add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/S_SYNCERs.HDL/S_SYNCER_for_S_PROTOCOL_ADAPTER_EGRESS.v
 add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/S_SYNCERs.HDL/S_SYNCER_for_S_SYNCER_for_S_PROTOCOL_ADAPTER_EGRESS.v
 add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/S_SYNCERs.HDL/S_SYNCER_for__OUT_.v
-add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/S_SYNCERs.HDL/xpm_cdc.sv
-add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/S_SYNCERs.HDL/xpm_fifo.sv
-add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/S_SYNCERs.HDL/xpm_memory.sv
 add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/update_phy_dst_port.HDL/update_phy_dst_port.v
 add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/update_phy_dst_port.HDL/update_phy_dst_port.vp
 add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/update_phy_src_port.HDL/update_phy_src_port.v

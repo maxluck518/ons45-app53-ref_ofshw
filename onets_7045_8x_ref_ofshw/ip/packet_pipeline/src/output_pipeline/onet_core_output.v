@@ -480,18 +480,13 @@ module onet_core_output
         .tuple_in_flowstream_valid          (tuple_in_flowstream_valid)
     );
     generate genvar i;
-    for(i=0;i<8;i=i+1) begin : eth_channel
+    for(i=0;i<7;i=i+1) begin : eth_channel
         axis_converter_tx
         #(
             .C_M_AXIS_DATA_WIDTH  (C_M_AXIS_DATA_WIDTH),
             .C_S_AXIS_DATA_WIDTH  (C_S_AXIS_DATA_WIDTH),
-<<<<<<< HEAD:onets_7045_8x_ref_ofshw/ip/packet_pipeline/src/output_pipeline/onet_core_output.v
             .C_M_AXIS_TUSER_WIDTH (C_M_AXIS_USER_WIDTH),
             .C_S_AXIS_TUSER_WIDTH (C_S_AXIS_USER_WIDTH)
-=======
-            .C_M_AXIS_TUSER_WIDTH  (C_M_AXIS_USER_WIDTH),
-            .C_S_AXIS_TUSER_WIDTH  (C_S_AXIS_USER_WIDTH)
->>>>>>> 12dbc2363991f75f748f42fa796a850676fff2c3:onets_7045_8x_ref_ofshw/ip/output_pipeline/onet_core_output.v
         ) eth_tx
         (
             .axi_aclk               (axis_aclk),
@@ -524,15 +519,11 @@ module onet_core_output
             .m_axis_txc_tlast             (m_axis_eth_txc_tlast[i]), 
             .m_axis_txc_tready            (m_axis_eth_txc_tready[i])
         );
-<<<<<<< HEAD:onets_7045_8x_ref_ofshw/ip/packet_pipeline/src/output_pipeline/onet_core_output.v
         end
-=======
-    end
->>>>>>> 12dbc2363991f75f748f42fa796a850676fff2c3:onets_7045_8x_ref_ofshw/ip/output_pipeline/onet_core_output.v
     endgenerate
 
     generate genvar k;
-    for(k = 0;k<8;k=k+1) begin : dma_channel
+    for(k = 0;k<7;k=k+1) begin : dma_channel
         axis_converter_tx
         #(
             .C_M_AXIS_DATA_WIDTH  (C_M_AXIS_DATA_WIDTH),
