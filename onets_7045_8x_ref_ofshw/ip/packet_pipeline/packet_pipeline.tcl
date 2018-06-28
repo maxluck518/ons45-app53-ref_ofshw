@@ -19,29 +19,55 @@ add_files ./src/output_pipeline/onet_core_output.v
 add_files ./src/output_pipeline/output_scheduler.v
 add_files ./src/output_pipeline/packet_output_pipeline.v
 add_files ./src/packet_pipeline.v
-add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/ACL.HDL/ACL.v
-add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/ACL.HDL/ACL.vp
-add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/OF_parser.HDL/OF_parser.v
-add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/OF_parser.HDL/OF_parser.vp
-add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/OpenFlowDemo.v
-add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/S_BRIDGERs.HDL/S_BRIDGER_for_lookup_tuple_in_request.v
-add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/S_BRIDGERs.HDL/S_BRIDGER_for_lookup_tuple_in_request.vp
-add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/S_CONTROLLERs.HDL/S_CONTROLLER_OpenFlowDemo.v
-add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/S_CONTROLLERs.HDL/S_CONTROLLER_OpenFlowDemo.vp
-add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/S_PROTOCOL_ADAPTERs.HDL/S_PROTOCOL_ADAPTER_EGRESS.v
-add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/S_PROTOCOL_ADAPTERs.HDL/S_PROTOCOL_ADAPTER_EGRESS.vp
-add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/S_PROTOCOL_ADAPTERs.HDL/S_PROTOCOL_ADAPTER_INGRESS.v
-add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/S_PROTOCOL_ADAPTERs.HDL/S_PROTOCOL_ADAPTER_INGRESS.vp
-add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/S_RESETTER.HDL/S_RESETTER_control.v
-add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/S_RESETTER.HDL/S_RESETTER_line.v
-add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/S_RESETTER.HDL/S_RESETTER_lookup.v
-add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/S_SYNCERs.HDL/S_SYNCER_for_S_PROTOCOL_ADAPTER_EGRESS.v
-add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/S_SYNCERs.HDL/S_SYNCER_for_S_SYNCER_for_S_PROTOCOL_ADAPTER_EGRESS.v
-add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/S_SYNCERs.HDL/S_SYNCER_for__OUT_.v
-add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/update_phy_dst_port.HDL/update_phy_dst_port.v
-add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/update_phy_dst_port.HDL/update_phy_dst_port.vp
-add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/update_phy_src_port.HDL/update_phy_src_port.v
-add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/update_phy_src_port.HDL/update_phy_src_port.vp
+
+# add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/ACL.HDL/ACL.v
+# add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/ACL.HDL/ACL.vp
+# add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/OF_parser.HDL/OF_parser.v
+# add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/OF_parser.HDL/OF_parser.vp
+# add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/OpenFlowDemo.v
+# add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/S_BRIDGERs.HDL/S_BRIDGER_for_lookup_tuple_in_request.v
+# add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/S_BRIDGERs.HDL/S_BRIDGER_for_lookup_tuple_in_request.vp
+# add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/S_CONTROLLERs.HDL/S_CONTROLLER_OpenFlowDemo.v
+# add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/S_CONTROLLERs.HDL/S_CONTROLLER_OpenFlowDemo.vp
+# add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/S_PROTOCOL_ADAPTERs.HDL/S_PROTOCOL_ADAPTER_EGRESS.v
+# add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/S_PROTOCOL_ADAPTERs.HDL/S_PROTOCOL_ADAPTER_EGRESS.vp
+# add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/S_PROTOCOL_ADAPTERs.HDL/S_PROTOCOL_ADAPTER_INGRESS.v
+# add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/S_PROTOCOL_ADAPTERs.HDL/S_PROTOCOL_ADAPTER_INGRESS.vp
+# add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/S_RESETTER.HDL/S_RESETTER_control.v
+# add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/S_RESETTER.HDL/S_RESETTER_line.v
+# add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/S_RESETTER.HDL/S_RESETTER_lookup.v
+# add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/S_SYNCERs.HDL/S_SYNCER_for_S_PROTOCOL_ADAPTER_EGRESS.v
+# add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/S_SYNCERs.HDL/S_SYNCER_for_S_SYNCER_for_S_PROTOCOL_ADAPTER_EGRESS.v
+# add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/S_SYNCERs.HDL/S_SYNCER_for__OUT_.v
+# add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/update_phy_dst_port.HDL/update_phy_dst_port.v
+# add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/update_phy_dst_port.HDL/update_phy_dst_port.vp
+# add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/update_phy_src_port.HDL/update_phy_src_port.v
+# add_files ./src/sdnet/OpenFlowDemo/work_OpenFlowDemo/OpenFlowDemo/update_phy_src_port.HDL/update_phy_src_port.vp
+
+add_files ./src/sdnet/FiveTupleDemo/work_FiveTupleDemo/FiveTupleDemo/ACL.HDL/ACL.v
+add_files ./src/sdnet/FiveTupleDemo/work_FiveTupleDemo/FiveTupleDemo/ACL.HDL/ACL.vp
+add_files ./src/sdnet/FiveTupleDemo/work_FiveTupleDemo/FiveTupleDemo/OF_parser.HDL/OF_parser.v
+add_files ./src/sdnet/FiveTupleDemo/work_FiveTupleDemo/FiveTupleDemo/OF_parser.HDL/OF_parser.vp
+add_files ./src/sdnet/FiveTupleDemo/work_FiveTupleDemo/FiveTupleDemo/FiveTupleDemo.v
+add_files ./src/sdnet/FiveTupleDemo/work_FiveTupleDemo/FiveTupleDemo/S_BRIDGERs.HDL/S_BRIDGER_for_lookup_tuple_in_request.v
+add_files ./src/sdnet/FiveTupleDemo/work_FiveTupleDemo/FiveTupleDemo/S_BRIDGERs.HDL/S_BRIDGER_for_lookup_tuple_in_request.vp
+add_files ./src/sdnet/FiveTupleDemo/work_FiveTupleDemo/FiveTupleDemo/S_CONTROLLERs.HDL/S_CONTROLLER_FiveTupleDemo.v
+add_files ./src/sdnet/FiveTupleDemo/work_FiveTupleDemo/FiveTupleDemo/S_CONTROLLERs.HDL/S_CONTROLLER_FiveTupleDemo.vp
+add_files ./src/sdnet/FiveTupleDemo/work_FiveTupleDemo/FiveTupleDemo/S_PROTOCOL_ADAPTERs.HDL/S_PROTOCOL_ADAPTER_EGRESS.v
+add_files ./src/sdnet/FiveTupleDemo/work_FiveTupleDemo/FiveTupleDemo/S_PROTOCOL_ADAPTERs.HDL/S_PROTOCOL_ADAPTER_EGRESS.vp
+add_files ./src/sdnet/FiveTupleDemo/work_FiveTupleDemo/FiveTupleDemo/S_PROTOCOL_ADAPTERs.HDL/S_PROTOCOL_ADAPTER_INGRESS.v
+add_files ./src/sdnet/FiveTupleDemo/work_FiveTupleDemo/FiveTupleDemo/S_PROTOCOL_ADAPTERs.HDL/S_PROTOCOL_ADAPTER_INGRESS.vp
+add_files ./src/sdnet/FiveTupleDemo/work_FiveTupleDemo/FiveTupleDemo/S_RESETTER.HDL/S_RESETTER_control.v
+add_files ./src/sdnet/FiveTupleDemo/work_FiveTupleDemo/FiveTupleDemo/S_RESETTER.HDL/S_RESETTER_line.v
+add_files ./src/sdnet/FiveTupleDemo/work_FiveTupleDemo/FiveTupleDemo/S_RESETTER.HDL/S_RESETTER_lookup.v
+add_files ./src/sdnet/FiveTupleDemo/work_FiveTupleDemo/FiveTupleDemo/S_SYNCERs.HDL/S_SYNCER_for_S_PROTOCOL_ADAPTER_EGRESS.v
+add_files ./src/sdnet/FiveTupleDemo/work_FiveTupleDemo/FiveTupleDemo/S_SYNCERs.HDL/S_SYNCER_for_S_SYNCER_for_S_PROTOCOL_ADAPTER_EGRESS.v
+add_files ./src/sdnet/FiveTupleDemo/work_FiveTupleDemo/FiveTupleDemo/S_SYNCERs.HDL/S_SYNCER_for__OUT_.v
+add_files ./src/sdnet/FiveTupleDemo/work_FiveTupleDemo/FiveTupleDemo/update_phy_dst_port.HDL/update_phy_dst_port.v
+add_files ./src/sdnet/FiveTupleDemo/work_FiveTupleDemo/FiveTupleDemo/update_phy_dst_port.HDL/update_phy_dst_port.vp
+add_files ./src/sdnet/FiveTupleDemo/work_FiveTupleDemo/FiveTupleDemo/update_phy_src_port.HDL/update_phy_src_port.v
+add_files ./src/sdnet/FiveTupleDemo/work_FiveTupleDemo/FiveTupleDemo/update_phy_src_port.HDL/update_phy_src_port.vp
+
 
 set_property top packet_pipeline [current_fileset]
 

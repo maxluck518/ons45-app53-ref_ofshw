@@ -655,7 +655,8 @@ module packet_pipeline
    );
 
 
-   OpenFlowDemo OpenFlowDemo_inst
+   // OpenFlowDemo OpenFlowDemo_inst
+   FiveTupleDemo FiveTupleDemo_inst
    (
        .packet_in_instream_TVALID       (s_axis_sdnet_rxd_tvalid),
        .packet_in_instream_TREADY       (s_axis_sdnet_rxd_tready),
