@@ -279,6 +279,8 @@ connect_bd_net [get_bd_pins packet_pipeline/s_axis_mm2s_4_tvalid] [get_bd_pins g
 connect_bd_net [get_bd_pins packet_pipeline/s_axis_mm2s_5_tvalid] [get_bd_pins gnd/dout]
 connect_bd_net [get_bd_pins packet_pipeline/s_axis_mm2s_6_tvalid] [get_bd_pins gnd/dout]
 connect_bd_net [get_bd_pins packet_pipeline/s_axis_mm2s_7_tvalid] [get_bd_pins gnd/dout]
+connect_bd_net [get_bd_pins rst_ps7_0_125M/mb_debug_sys_rst] [get_bd_pins gnd/dout]
+connect_bd_net [get_bd_pins rst_ps7_0_75M/mb_debug_sys_rst] [get_bd_pins gnd/dout]
 
 # Create address segments
 create_bd_addr_seg -range 0x40000000 -offset 0x0 [get_bd_addr_spaces axi_dma_0/Data_SG] [get_bd_addr_segs processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM] SEG_processing_system7_0_HP0_DDR_LOWOCM

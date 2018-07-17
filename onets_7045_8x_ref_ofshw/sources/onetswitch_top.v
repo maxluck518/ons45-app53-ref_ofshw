@@ -134,7 +134,7 @@ onets_bd_wrapper i_onets_bd_wrapper(
    .bd_fclk1_75m        ( bd_fclk1_75m    ),
    .bd_fclk2_200m       ( bd_fclk2_200m   ),
    
-   .ext_rst             (0),
+   .ext_rst             (1),
 
    .mdio_0_mdio_io      ( rgmii_0_mdio    ),
    .mdio_0_mdc          ( rgmii_0_mdc     ),
