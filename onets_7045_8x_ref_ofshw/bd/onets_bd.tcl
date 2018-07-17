@@ -21,7 +21,6 @@ set sfp_3 [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:sfp_rtl:
 set bd_fclk0_125m [ create_bd_port -dir O -type clk bd_fclk0_125m ]
 set bd_fclk1_75m [ create_bd_port -dir O -type clk bd_fclk1_75m ]
 set bd_fclk2_200m [ create_bd_port -dir O -type clk bd_fclk2_200m ]
-set ext_rst [ create_bd_port -dir I -type rst ext_rst ]
 set phy_rst_n_0 [ create_bd_port -dir O -type rst phy_rst_n_0 ]
 set phy_rst_n_1 [ create_bd_port -dir O -type rst phy_rst_n_1 ]
 set phy_rst_n_2 [ create_bd_port -dir O -type rst phy_rst_n_2 ]
@@ -97,6 +96,10 @@ set_property -dict [ list CONFIG.c_include_mm2s_dre {1} CONFIG.c_include_s2mm_dr
 set gnd [create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 gnd]
 set_property -dict [list CONFIG.CONST_VAL {0}] [get_bd_cells gnd]
 
+# Create instance: vcc, and set properties
+set gnd [create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 vcc]
+set_property -dict [list CONFIG.CONST_VAL {1}] [get_bd_cells vcc]
+
 # Create instance: packet_pipeline, and set properties
 set packet_pipeline [ create_bd_cell -type ip -vlnv user.org:user:packet_pipeline:1.0 packet_pipeline]
 
@@ -125,8 +128,8 @@ connect_bd_net [ get_bd_ports phy_rst_n_3]   [ get_bd_pins axi_ethernet_3/phy_rs
 connect_bd_net [ get_bd_ports bd_fclk0_125m] [ get_bd_pins processing_system7_0/FCLK_CLK0]
 connect_bd_net [ get_bd_ports bd_fclk1_75m]  [ get_bd_pins processing_system7_0/FCLK_CLK1]
 connect_bd_net [ get_bd_ports bd_fclk2_200m] [ get_bd_pins processing_system7_0/FCLK_CLK2]
-connect_bd_net [ get_bd_ports ext_rst]       [ get_bd_pins rst_ps7_0_75M/ext_reset_in]
-connect_bd_net [ get_bd_ports ext_rst]       [ get_bd_pins rst_ps7_0_125M/ext_reset_in]
+connect_bd_net [ get_bd_ports vcc/dout]      [ get_bd_pins rst_ps7_0_75M/ext_reset_in]
+connect_bd_net [ get_bd_ports vcc/dout]      [ get_bd_pins rst_ps7_0_125M/ext_reset_in]
 
 # proc_sys_reset connections
 connect_bd_net [ get_bd_pins rst_ps7_0_125M/slowest_sync_clk] [ get_bd_pins processing_system7_0/FCLK_CLK0]
