@@ -238,7 +238,7 @@ module packet_output_pipeline#(
         .C_M_AXIS_DATA_WIDTH      (C_M_AXIS_TXD_TDATA_WIDTH),
         .C_M_AXIS_USER_WIDTH      (ACTION_TUPLE_WIDTH),
         .ACTION_TUPLE_WIDTH       (ACTION_TUPLE_WIDTH)
-    )
+    ) onet_core_output_inst
     (
         .axis_aclk                          (axis_aclk),
         .axis_aresetn                       (axis_aresetn),

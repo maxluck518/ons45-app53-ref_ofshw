@@ -109,7 +109,7 @@ module onet_core_logic
       .C_M_AXIS_TUSER_WIDTH     (AXIS_TUSER_WIDTH),
       .C_S_AXIS_TUSER_WIDTH     (AXIS_TUSER_WIDTH),
       .C_DEFAULT_VALUE_ENABLE   (DEFAULT_TUSER_ENABLE),
-	  .C_DEFAULT_SRC_PORT       (QUAD_BASE_ADDRESS+8'h00),
+	  .C_DEFAULT_SRC_PORT       (QUAD_BASE_ADDRESS+8'h01),
 	  .C_DEFAULT_DST_PORT       (8'h00)
      ) eth_rx_0
     (
@@ -144,7 +144,7 @@ module onet_core_logic
       .C_M_AXIS_TUSER_WIDTH     (AXIS_TUSER_WIDTH),
       .C_S_AXIS_TUSER_WIDTH     (AXIS_TUSER_WIDTH),
       .C_DEFAULT_VALUE_ENABLE   (DEFAULT_TUSER_ENABLE),
-	  .C_DEFAULT_SRC_PORT       (QUAD_BASE_ADDRESS+8'h01),
+	  .C_DEFAULT_SRC_PORT       (QUAD_BASE_ADDRESS+8'h02),
 	  .C_DEFAULT_DST_PORT       (8'h00)
      ) eth_rx_1
     (
@@ -179,7 +179,7 @@ module onet_core_logic
       .C_M_AXIS_TUSER_WIDTH     (AXIS_TUSER_WIDTH),
       .C_S_AXIS_TUSER_WIDTH     (AXIS_TUSER_WIDTH),
       .C_DEFAULT_VALUE_ENABLE   (DEFAULT_TUSER_ENABLE),
-	  .C_DEFAULT_SRC_PORT       (QUAD_BASE_ADDRESS+8'h02),
+	  .C_DEFAULT_SRC_PORT       (QUAD_BASE_ADDRESS+8'h03),
 	  .C_DEFAULT_DST_PORT       (8'h00)
      ) eth_rx_2
     (
@@ -214,7 +214,7 @@ module onet_core_logic
       .C_M_AXIS_TUSER_WIDTH     (AXIS_TUSER_WIDTH),
       .C_S_AXIS_TUSER_WIDTH     (AXIS_TUSER_WIDTH),
       .C_DEFAULT_VALUE_ENABLE   (DEFAULT_TUSER_ENABLE),
-	  .C_DEFAULT_SRC_PORT       (QUAD_BASE_ADDRESS+8'h03),
+	  .C_DEFAULT_SRC_PORT       (QUAD_BASE_ADDRESS+8'h04),
 	  .C_DEFAULT_DST_PORT       (8'h00)
      ) eth_rx_3
     (

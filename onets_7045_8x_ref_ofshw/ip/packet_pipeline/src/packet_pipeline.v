@@ -699,7 +699,8 @@ module packet_pipeline
        .internal_rst_done               ()
        );
 
-   packet_output_pipeline#(
+   packet_output_pipeline
+   #(
        .C_S_AXI_LITE_DATA_WIDTH    (C_S_AXI_LITE_DATA_WIDTH),
        .C_S_AXI_LITE_ADDR_WIDTH    (C_S_AXI_LITE_ADDR_WIDTH),
        .C_S_AXIS_RXD_TDATA_WIDTH   (AXIS_SDNET_DATA_WIDTH),
@@ -707,7 +708,7 @@ module packet_pipeline
        .C_M_AXIS_TXD_TDATA_WIDTH   (C_M_AXIS_TXD_TDATA_WIDTH),
        .C_M_AXIS_TXC_TDATA_WIDTH   (C_M_AXIS_TXC_TDATA_WIDTH),
        .ACTION_TUPLE_WIDTH         (ACTION_TUPLE_WIDTH)
-   )
+   ) packet_output_pipeline_inst
    (
        .s_axis_rxd_aclk                (s_axis_rxd_aclk          ),
        .s_axis_rxd_aresetn             (s_axis_rxd_aresetn       ),
