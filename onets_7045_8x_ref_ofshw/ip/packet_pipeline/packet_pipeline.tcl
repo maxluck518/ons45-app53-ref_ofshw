@@ -67,9 +67,10 @@ add_files ./src/sdnet/FiveTupleDemo/work_FiveTupleDemo/FiveTupleDemo/update_phy_
 add_files ./src/sdnet/FiveTupleDemo/work_FiveTupleDemo/FiveTupleDemo/update_phy_dst_port.HDL/update_phy_dst_port.vp
 add_files ./src/sdnet/FiveTupleDemo/work_FiveTupleDemo/FiveTupleDemo/update_phy_src_port.HDL/update_phy_src_port.v
 add_files ./src/sdnet/FiveTupleDemo/work_FiveTupleDemo/FiveTupleDemo/update_phy_src_port.HDL/update_phy_src_port.vp
-
+add_files ./sim/tb_pipeline.v
 
 set_property top packet_pipeline [current_fileset]
+set_property top tb_pipeline [get_filesets sim_1]
 
 cd $ip_proj_root
 
