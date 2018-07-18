@@ -162,32 +162,10 @@ module output_scheduler
 
     reg     [QUEUES_NUM-1:0]             op;
 
-    // always @(*) begin
-        // case(dst_port)
-            // 8'd1    : op = 16'h0001;
-            // 8'd2    : op = 16'h0002;
-            // 8'd3    : op = 16'h0004;
-            // 8'd4    : op = 16'h0008;
-            // 8'd5    : op = 16'h0010;
-            // 8'd6    : op = 16'h0020;
-            // 8'd7    : op = 16'h0040;
-            // 8'd8    : op = 16'h0080;
-            // 8'd9    : op = 16'h0100;
-            // 8'd10   : op = 16'h0200;
-            // 8'd11   : op = 16'h0400;
-            // 8'd12   : op = 16'h0800;
-            // 8'd13   : op = 16'h1000;
-            // 8'd14   : op = 16'h2000;
-            // 8'd15   : op = 16'h4000;
-            // 8'd16   : op = 16'h8000;
-            // default : op= 0;
-        // endcase
-   // end
-
     always @(*) begin
-        case(src_port)
-            8'd1    : op = 16'h0002;
-            8'd2    : op = 16'h0001;
+        case(dst_port)
+            8'd1    : op = 16'h0001;
+            8'd2    : op = 16'h0002;
             8'd3    : op = 16'h0004;
             8'd4    : op = 16'h0008;
             8'd5    : op = 16'h0010;
@@ -205,6 +183,28 @@ module output_scheduler
             default : op= 0;
         endcase
    end
+
+    // always @(*) begin
+        // case(src_port)
+            // 8'd1    : op = 16'h0002;
+            // 8'd2    : op = 16'h0001;
+            // 8'd3    : op = 16'h0004;
+            // 8'd4    : op = 16'h0008;
+            // 8'd5    : op = 16'h0010;
+            // 8'd6    : op = 16'h0020;
+            // 8'd7    : op = 16'h0040;
+            // 8'd8    : op = 16'h0080;
+            // 8'd9    : op = 16'h0100;
+            // 8'd10   : op = 16'h0200;
+            // 8'd11   : op = 16'h0400;
+            // 8'd12   : op = 16'h0800;
+            // 8'd13   : op = 16'h1000;
+            // 8'd14   : op = 16'h2000;
+            // 8'd15   : op = 16'h4000;
+            // 8'd16   : op = 16'h8000;
+            // default : op= 0;
+        // endcase
+   // end
 
     wire [AXIS_DATA_WIDTH-1:0]            fifo_in_tdata;
     wire [AXIS_USER_WIDTH-1:0]            fifo_in_tuser;
