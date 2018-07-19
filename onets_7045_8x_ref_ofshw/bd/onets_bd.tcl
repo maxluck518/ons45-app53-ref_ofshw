@@ -130,6 +130,10 @@ connect_bd_net [ get_bd_ports bd_fclk1_75m]  [ get_bd_pins processing_system7_0/
 connect_bd_net [ get_bd_ports bd_fclk2_200m] [ get_bd_pins processing_system7_0/FCLK_CLK2]
 connect_bd_net [ get_bd_pins vcc/dout]      [ get_bd_pins rst_ps7_0_75M/ext_reset_in]
 connect_bd_net [ get_bd_pins vcc/dout]      [ get_bd_pins rst_ps7_0_125M/ext_reset_in]
+connect_bd_net [ get_bd_pins vcc/dout]      [ get_bd_pins axi_ethernet_4/signal_detect] 
+connect_bd_net [ get_bd_pins vcc/dout]      [ get_bd_pins axi_ethernet_5/signal_detect] 
+connect_bd_net [ get_bd_pins vcc/dout]      [ get_bd_pins axi_ethernet_6/signal_detect] 
+connect_bd_net [ get_bd_pins vcc/dout]      [ get_bd_pins axi_ethernet_7/signal_detect] 
 
 # proc_sys_reset connections
 connect_bd_net [ get_bd_pins rst_ps7_0_125M/slowest_sync_clk] [ get_bd_pins processing_system7_0/FCLK_CLK0]
