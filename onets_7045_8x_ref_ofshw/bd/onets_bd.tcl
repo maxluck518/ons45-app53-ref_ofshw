@@ -29,6 +29,7 @@ set phy_rst_n_3 [ create_bd_port -dir O -type rst phy_rst_n_3 ]
 # zynq
 create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0
 set_property -dict [list CONFIG.PCW_FPGA0_PERIPHERAL_FREQMHZ {125} CONFIG.PCW_FPGA1_PERIPHERAL_FREQMHZ {76.923080} CONFIG.PCW_FPGA2_PERIPHERAL_FREQMHZ {200} CONFIG.PCW_EN_CLK1_PORT {1} CONFIG.PCW_EN_CLK2_PORT {1}] [get_bd_cells processing_system7_0]
+set_property -dict [list CONFIG.PCW_USE_FABRIC_INTERRUPT {1} CONFIG.PCW_IRQ_F2P_INTR {1}] [get_bd_cells processing_system7_0]
 set_property -dict [list CONFIG.PCW_USE_S_AXI_HP0 {1}] [get_bd_cells processing_system7_0]
 
 # RGMII
@@ -91,6 +92,10 @@ set_property -dict [ list CONFIG.NUM_MI {12} CONFIG.NUM_SI {1}  ] $axi_ic_gp
 # Create instance: axi_dma_0, and set properties
 set axi_dma_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_dma:7.1 axi_dma_0 ]
 set_property -dict [ list CONFIG.c_include_mm2s_dre {1} CONFIG.c_include_s2mm_dre {1} CONFIG.c_sg_use_stsapp_length {1}  ] $axi_dma_0
+
+# Create instance: xlconcat, and set properties
+create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_0
+set_property -dict [list CONFIG.NUM_PORTS {10}] [get_bd_cells xlconcat_0]
 
 # Create instance: gnd, and set properties
 set gnd [create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 gnd]
@@ -288,6 +293,18 @@ connect_bd_net [get_bd_pins packet_pipeline/s_axis_mm2s_6_tvalid] [get_bd_pins g
 connect_bd_net [get_bd_pins packet_pipeline/s_axis_mm2s_7_tvalid] [get_bd_pins gnd/dout]
 connect_bd_net [get_bd_pins rst_ps7_0_125M/mb_debug_sys_rst] [get_bd_pins gnd/dout]
 connect_bd_net [get_bd_pins rst_ps7_0_75M/mb_debug_sys_rst] [get_bd_pins gnd/dout]
+
+connect_bd_net [get_bd_pins axi_ethernet_0/interrupt] [get_bd_pins xlconcat_0/In0]
+connect_bd_net [get_bd_pins axi_ethernet_1/interrupt] [get_bd_pins xlconcat_0/In1]
+connect_bd_net [get_bd_pins axi_ethernet_2/interrupt] [get_bd_pins xlconcat_0/In2]
+connect_bd_net [get_bd_pins axi_ethernet_3/interrupt] [get_bd_pins xlconcat_0/In3]
+connect_bd_net [get_bd_pins axi_ethernet_4/interrupt] [get_bd_pins xlconcat_0/In4]
+connect_bd_net [get_bd_pins axi_ethernet_5/interrupt] [get_bd_pins xlconcat_0/In5]
+connect_bd_net [get_bd_pins axi_ethernet_6/interrupt] [get_bd_pins xlconcat_0/In6]
+connect_bd_net [get_bd_pins axi_ethernet_7/interrupt] [get_bd_pins xlconcat_0/In7]
+connect_bd_net [get_bd_pins axi_dma_0/mm2s_introut] [get_bd_pins xlconcat_0/In8]
+connect_bd_net [get_bd_pins axi_dma_0/s2mm_introut] [get_bd_pins xlconcat_0/In9]
+connect_bd_net [get_bd_pins xlconcat_0/dout] [get_bd_pins processing_system7_0/IRQ_F2P]
 
 # Create address segments
 create_bd_addr_seg -range 0x40000000 -offset 0x0 [get_bd_addr_spaces axi_dma_0/Data_SG] [get_bd_addr_segs processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM] SEG_processing_system7_0_HP0_DDR_LOWOCM
