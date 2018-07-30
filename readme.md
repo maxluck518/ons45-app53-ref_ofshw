@@ -31,7 +31,7 @@
 
 ## Getting Started
 ### Quick Started
-Just copy all the files in *./ready_to _download/* into the FAT partition of SD_card, and start the device.
+Just copy all the files in *./ready_to_download/sd_card/* into the FAT partition of SD_card, and start the device.
 
 ### Started from Source File
 #### 1. build the vivado project
@@ -76,7 +76,7 @@ For more about SDNet : [UG1252](https://china.xilinx.com/support/documentation/s
 The Software Agent is used for downloading flow_entry to the lookup table in SDNet.
 
 #### Quick Started
-Use the Prebuild app *download_flow_entry* in *./ready_to_download*
+Use the Prebuild app *download_flow_entry* in *./ready_to_download/tools/*
 
 ##### 1. Create the table_entry_file
 Create :
@@ -93,7 +93,7 @@ $ vim test.txt
 $ ./download_flow_entry test.txt
 ```
 
-For more details about the flow_entry format: [flow_table](./flow_table)
+For more details about the flow_entry format: [flow_table](https://github.com/maxluck518/flow_table/tree/fivetuple)
 
 
 
