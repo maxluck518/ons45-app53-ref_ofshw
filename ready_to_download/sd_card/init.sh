@@ -77,6 +77,42 @@ fi
 echo "Entering ofs directory \"$ofs_dir\"..."
 cd $ofs_dir
 
+./wrreg 0x43d00500 0x50
+./wrreg 0x43d40500 0x50
+./wrreg 0x43d80500 0x50
+./wrreg 0x43dc0500 0x50
+sleep 1
+
+./rdreg 0x43d00500 4
+./rdreg 0x43d40500 4
+./rdreg 0x43d80500 4
+./rdreg 0x43dc0500 4
+sleep 1
+
+./wrreg 0x43d00508 0x1140
+./wrreg 0x43d40508 0x1140
+./wrreg 0x43d80508 0x1140
+./wrreg 0x43dc0508 0x1140
+sleep 1
+
+./wrreg 0x43d00504 0x01004800
+./wrreg 0x43d40504 0x01004800
+./wrreg 0x43d80504 0x01004800
+./wrreg 0x43dc0504 0x01004800
+sleep 10
+
+./wrreg 0x43d00504 0x01008800
+./wrreg 0x43d40504 0x01008800
+./wrreg 0x43d80504 0x01008800
+./wrreg 0x43dc0504 0x01008800
+sleep 1
+
+./rdreg 0x43d00500 4
+./rdreg 0x43d40500 4
+./rdreg 0x43d80500 4
+./rdreg 0x43dc0500 4
+sleep 1
+
 echo "Starting configuring udatapath..."
 # ./udatapath/ofdatapath --datapath-id=$datapath_id --interfaces=$interfaces ptcp:$local_port $ofdatapath_options &
 sleep 3
