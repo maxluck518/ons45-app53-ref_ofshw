@@ -35,30 +35,12 @@ fi
 
 echo "Networking Initial, Please wait..."
 # Due to driver issue, networking interfaces should be set up, then down at first.
-ifconfig eth1 up
-ifconfig eth2 up
-ifconfig eth3 up
-ifconfig eth4 up
-sleep 1
-
-ifconfig eth4 down
-ifconfig eth3 down
-ifconfig eth2 down
-ifconfig eth1 down
 ifconfig eth0 down
 
 ifconfig eth0 hw ether 00:0a:35:$mac_d1:$mac_d2:00
-ifconfig eth1 hw ether 00:0a:35:$mac_d1:$mac_d2:01
-ifconfig eth2 hw ether 00:0a:35:$mac_d1:$mac_d2:02
-ifconfig eth3 hw ether 00:0a:35:$mac_d1:$mac_d2:03
-ifconfig eth4 hw ether 00:0a:35:$mac_d1:$mac_d2:04
 sleep 1
 
 ifconfig eth0 $switch_ip netmask $switch_netmask up
-ifconfig eth1 up
-ifconfig eth2 up
-ifconfig eth3 up
-ifconfig eth4 up
 ifconfig lo up
 sleep 1
 
@@ -69,41 +51,76 @@ fi
 
 echo "Network Interfaces Initial Done"
 
-# setup 1000baseX pcs-pma
-
+# setup 1000basex pcs-pma
 /mnt/tools/wrreg 0x43d00500 0x50
 /mnt/tools/wrreg 0x43d40500 0x50
 /mnt/tools/wrreg 0x43d80500 0x50
 /mnt/tools/wrreg 0x43dc0500 0x50
-sleep 1
 
 /mnt/tools/rdreg 0x43d00500 4
 /mnt/tools/rdreg 0x43d40500 4
 /mnt/tools/rdreg 0x43d80500 4
 /mnt/tools/rdreg 0x43dc0500 4
-sleep 1
 
 /mnt/tools/wrreg 0x43d00508 0x1140
 /mnt/tools/wrreg 0x43d40508 0x1140
 /mnt/tools/wrreg 0x43d80508 0x1140
 /mnt/tools/wrreg 0x43dc0508 0x1140
-sleep 1
 
 /mnt/tools/wrreg 0x43d00504 0x01004800
 /mnt/tools/wrreg 0x43d40504 0x01004800
 /mnt/tools/wrreg 0x43d80504 0x01004800
 /mnt/tools/wrreg 0x43dc0504 0x01004800
-sleep 10
+sleep 1
 
 /mnt/tools/wrreg 0x43d00504 0x01008800
 /mnt/tools/wrreg 0x43d40504 0x01008800
 /mnt/tools/wrreg 0x43d80504 0x01008800
 /mnt/tools/wrreg 0x43dc0504 0x01008800
-sleep 1
 
 /mnt/tools/rdreg 0x43d00500 4
 /mnt/tools/rdreg 0x43d40500 4
 /mnt/tools/rdreg 0x43d80500 4
 /mnt/tools/rdreg 0x43dc0500 4
-sleep 1
 
+# modify timing of eth-rgmii
+/mnt/tools/wrreg 0x43c00500 0x50
+/mnt/tools/wrreg 0x43c00508 0xf1e7
+/mnt/tools/wrreg 0x43c00504 0x00184800
+/mnt/tools/wrreg 0x43c00504 0x00188800
+/mnt/tools/rdreg 0x43c0050c 1
+/mnt/tools/wrreg 0x43c00508 0xf1e7
+/mnt/tools/wrreg 0x43c00504 0x00184800
+/mnt/tools/wrreg 0x43c00504 0x00188800
+/mnt/tools/rdreg 0x43c0050c 1
+/mnt/tools/wrreg 0x43c00508 0xf1e7
+/mnt/tools/wrreg 0x43c00504 0x02184800
+/mnt/tools/wrreg 0x43c00504 0x02188800
+/mnt/tools/rdreg 0x43c0050c 1
+/mnt/tools/wrreg 0x43c00508 0xf1e7
+/mnt/tools/wrreg 0x43c00504 0x03184800
+/mnt/tools/wrreg 0x43c00504 0x03188800
+/mnt/tools/rdreg 0x43c0050c 1
+
+# modify timing of eth-1000basex
+/mnt/tools/wrreg 0x43d00500 0x50
+/mnt/tools/wrreg 0x43d00508 0xf1e7
+/mnt/tools/wrreg 0x43d00504 0x00184800
+/mnt/tools/wrreg 0x43d00504 0x00188800
+/mnt/tools/rdreg 0x43d0050c 1
+/mnt/tools/wrreg 0x43d00508 0xf1e7
+/mnt/tools/wrreg 0x43d00504 0x00184800
+/mnt/tools/wrreg 0x43d00504 0x00188800
+/mnt/tools/rdreg 0x43d0050c 1
+/mnt/tools/wrreg 0x43d00508 0xf1e7
+/mnt/tools/wrreg 0x43d00504 0x02184800
+/mnt/tools/wrreg 0x43d00504 0x02188800
+/mnt/tools/rdreg 0x43d0050c 1
+/mnt/tools/wrreg 0x43d00508 0xf1e7
+/mnt/tools/wrreg 0x43d00504 0x03184800
+/mnt/tools/wrreg 0x43d00504 0x03188800
+/mnt/tools/rdreg 0x43d0050c 1
+
+
+# download_flow_entry(default)
+/mnt/tools/download_flow_entry /mnt/tools/test.txt
